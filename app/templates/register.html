@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<form name="register" action="" method="post">
+{{ form.hidden_tag() }}
+<table>
+    <tr>
+        <td>Username</td> <td>{{ form.username() }}</td>
+    </tr>
+    <tr>
+        <td>Email</td> <td>{{ form.email() }}</td>
+    </tr>
+    <tr>
+        <td>Password</td> <td>{{ form.password1() }}</td>
+    </tr>
+</table>
+<input type="submit" value="Register">
+</form>
+{% endblock %}

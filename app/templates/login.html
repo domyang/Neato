@@ -1,0 +1,21 @@
+<!-- extends base layout -->
+{% extends "base.html" %}
+{% import "wtf.html" as wtf %}
+{% block content %}
+    <h1>Sign in</h1>
+  <form action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+    <p>
+        Username {{ form.username() }}<br>
+        Password {{ form.password() }}
+        {% for error in form.username.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}<br>
+    </p>
+    <p>{{ form.remember_me() }} Remember Me</p>
+    <p><input type="submit" value="Sign In"></p>
+  </form>
+    <br>
+    <p>Don't have an account?</p>
+    <a href="{{ url_for('register') }}">Register here</a>
+{% endblock %}
